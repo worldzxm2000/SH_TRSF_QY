@@ -124,7 +124,8 @@ LRESULT Char2Json(QString &buff, QJsonObject &json)
 					QString strBuff = buff.mid(i, j - i +1);
 					QJsonObject SubJson;
 					SubJson.insert("ServiceTypeID", SH_TRSF_QY);
-
+					//数据存储类型
+					SubJson.insert("DataSourceID", 13);
 					Frame frame = { 0,NULL,NULL };
 					//获取帧长度
 					frame.len = ((strBuff[1]).unicode() & 0xFF + strBuff[2].unicode() * 256) - 6;
